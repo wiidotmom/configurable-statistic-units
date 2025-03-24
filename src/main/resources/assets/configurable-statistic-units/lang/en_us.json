@@ -1,0 +1,10 @@
+{
+  "configurablestatisticunits.config.title": "Configurable Statistic Units",
+  "configurablestatisticunits.config.group.units": "Units",
+  "configurablestatisticunits.config.option.timeUnit": "Time Units",
+  "configurablestatisticunits.config.option.timeUnit.no_change": "Vanilla Behavior",
+  "configurablestatisticunits.config.option.timeUnit.minutes_seconds": "Minutes/Seconds",
+  "configurablestatisticunits.config.option.timeUnit.hours": "Hours",
+  "configurablestatisticunits.config.option.timeUnit.days": "Days",
+  "configurablestatisticunits.config.option.timeUnit.years": "Years"
+}

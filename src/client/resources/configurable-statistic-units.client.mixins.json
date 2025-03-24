@@ -3,7 +3,7 @@
 	"package": "mom.wii.configurablestatisticunits.mixin.client",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
-		"ExampleClientMixin"
+		"MixinStatFormatter"
 	],
 	"injectors": {
 		"defaultRequire": 1

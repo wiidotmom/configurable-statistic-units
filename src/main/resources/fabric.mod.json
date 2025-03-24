@@ -3,27 +3,31 @@
 	"id": "configurable-statistic-units",
 	"version": "${version}",
 	"name": "Configurable Statistic Units",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Choose what units are used to display various statistics!",
 	"authors": [
-		"Me!"
+		{
+			"name": "igalaxy",
+			"contact": {
+				"homepage": "https://wii.mom"
+			}
+		}
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://codeberg.org/igalaxy/configurable-statistic-units",
+		"issues": "https://codeberg.org/igalaxy/configurable-statistic-units/issues"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/configurable-statistic-units/icon.png",
-	"environment": "*",
+	"environment": "client",
 	"entrypoints": {
-		"main": [
-			"mom.wii.configurablestatisticunits.ConfigurableStatisticUnits"
-		],
 		"client": [
 			"mom.wii.configurablestatisticunits.ConfigurableStatisticUnitsClient"
+		],
+		"modmenu": [
+			"mom.wii.configurablestatisticunits.compat.ModMenuCompat"
 		]
 	},
 	"mixins": [
-		"configurable-statistic-units.mixins.json",
 		{
 			"config": "configurable-statistic-units.client.mixins.json",
 			"environment": "client"
@@ -31,11 +35,18 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.16.10",
-		"minecraft": "~1.21.4",
+		"minecraft": "1.21.4",
 		"java": ">=21",
-		"fabric-api": "*"
+		"yet_another_config_lib_v3": ">=3.6.6"
 	},
 	"suggests": {
-		"another-mod": "*"
+		"modmenu": ">=13.0.0"
+	},
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.discord": "https://discord.gg/9taRw3PyKn"
+			}
+		}
 	}
 }
