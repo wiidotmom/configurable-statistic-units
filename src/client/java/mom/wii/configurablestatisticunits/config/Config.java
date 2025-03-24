@@ -37,18 +37,39 @@ public class Config {
         }
     }
 
+    public enum DistanceUnit implements NameableEnum {
+        NO_CHANGE,
+        CENTIMETERS,
+        METERS,
+        KILOMETERS;
+
+        @Override
+        public Text getDisplayName() {
+            return Text.translatable("configurablestatisticunits.config.option.distanceUnit." + name().toLowerCase());
+        }
+    }
+
     @SerialEntry
     public static TimeUnit timeUnit = TimeUnit.NO_CHANGE;
+
+    @SerialEntry
+    public static DistanceUnit distanceUnit = DistanceUnit.NO_CHANGE;
 
     public static Screen getConfigScreen(Screen parentScreen) {
         return YetAnotherConfigLib.createBuilder()
                 .title(Text.translatable("configurablestatisticunits.config.title"))
                 .category(ConfigCategory.createBuilder()
-                        .name(Text.translatable("configurablestatisticunits.config.group.units"))
+                        .name(Text.translatable("configurablestatisticunits.config.title"))
                         .option(Option.<TimeUnit>createBuilder()
                                 .name(Text.translatable("configurablestatisticunits.config.option.timeUnit"))
                                 .binding(TimeUnit.NO_CHANGE, () -> Config.timeUnit, newVal -> Config.timeUnit = newVal)
                                 .controller(opt -> EnumControllerBuilder.create(opt).enumClass(TimeUnit.class))
+                                .build()
+                        )
+                        .option(Option.<DistanceUnit>createBuilder()
+                                .name(Text.translatable("configurablestatisticunits.config.option.distanceUnit"))
+                                .binding(DistanceUnit.NO_CHANGE, () -> Config.distanceUnit, newVal -> Config.distanceUnit = newVal)
+                                .controller(opt -> EnumControllerBuilder.create(opt).enumClass(DistanceUnit.class))
                                 .build()
                         )
                         .build()

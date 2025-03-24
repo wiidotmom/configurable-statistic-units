@@ -3,7 +3,7 @@
 	"id": "configurable-statistic-units",
 	"version": "${version}",
 	"name": "Configurable Statistic Units",
-	"description": "Choose what units are used to display various statistics!",
+	"description": "Force the Statistics screen to use certain units",
 	"authors": [
 		{
 			"name": "igalaxy",
