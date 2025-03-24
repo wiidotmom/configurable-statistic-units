@@ -16,7 +16,7 @@
 		"sources": "https://codeberg.org/igalaxy/configurable-statistic-units",
 		"issues": "https://codeberg.org/igalaxy/configurable-statistic-units/issues"
 	},
-	"license": "CC0-1.0",
+	"license": "CC-BY-NC-SA-4.0",
 	"icon": "assets/configurable-statistic-units/icon.png",
 	"environment": "client",
 	"entrypoints": {
