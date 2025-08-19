@@ -21,10 +21,7 @@
 	"environment": "client",
 	"entrypoints": {
 		"client": [
-			"mom.wii.configurablestatisticunits.ConfigurableStatisticUnitsClient"
-		],
-		"modmenu": [
-			"mom.wii.configurablestatisticunits.compat.ModMenuCompat"
+          "mom.wii.configurablestatisticunits.ConfigurableStatisticUnits"
 		]
 	},
 	"mixins": [
@@ -34,13 +31,13 @@
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.16.10",
-		"minecraft": ">=1.21.5",
-		"java": ">=21",
-		"yet_another_config_lib_v3": ">=3.6.6"
+		"fabricloader": ">=0.17.2",
+		"minecraft": ">=1.21.9-alpha.25.34.b",
+		"java": ">=21"
 	},
 	"suggests": {
-		"modmenu": ">=14.0.0"
+		"modmenu": ">=15.0.0",
+		"mcqoy": ">=0.3.3"
 	},
 	"custom": {
 		"modmenu": {

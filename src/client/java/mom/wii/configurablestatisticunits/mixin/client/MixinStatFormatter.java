@@ -7,15 +7,17 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import mom.wii.configurablestatisticunits.config.Config.TimeUnit;
-import mom.wii.configurablestatisticunits.config.Config.DistanceUnit;
+import static mom.wii.configurablestatisticunits.config.Config.TimeUnit;
+import static mom.wii.configurablestatisticunits.config.Config.DistanceUnit;
+import static mom.wii.configurablestatisticunits.ConfigurableStatisticUnits.CONFIG;
 
 @Mixin(StatFormatter.class)
 public interface MixinStatFormatter {
     @Inject(method = "method_16819(I)Ljava/lang/String;", at = @At("RETURN"), cancellable = true)
     private static void configurablestatisticunits$TIME(int ticks, CallbackInfoReturnable<String> cir) {
-        TimeUnit timeUnit = Config.timeUnit;
-        if (timeUnit.equals(TimeUnit.NO_CHANGE)) return;
+        if (!CONFIG.enabled) return;
+        TimeUnit timeUnit = CONFIG.timeUnit;
+        if (timeUnit.equals(TimeUnit.VANILLA_BEHAVIOR)) return;
         double d = (double)ticks / (double)20.0F;
         double e = d / (double)60.0F;
         double f = e / (double)60.0F;
@@ -35,8 +37,9 @@ public interface MixinStatFormatter {
 
     @Inject(method = "method_16816(I)Ljava/lang/String;", at = @At("RETURN"), cancellable = true)
     private static void configurablestaticunits$DISTANCE(int cm, CallbackInfoReturnable<String> cir) {
-        DistanceUnit distanceUnit = Config.distanceUnit;
-        if (distanceUnit.equals(DistanceUnit.NO_CHANGE)) return;
+        if (!CONFIG.enabled) return;
+        DistanceUnit distanceUnit = CONFIG.distanceUnit;
+        if (distanceUnit.equals(DistanceUnit.VANILLA_BEHAVIOR)) return;
 
         double d = (double)cm / (double)100.0F;
         double e = d / (double)1000.0F;
