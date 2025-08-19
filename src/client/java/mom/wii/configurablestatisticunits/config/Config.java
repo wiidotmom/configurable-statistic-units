@@ -7,7 +7,7 @@ import folk.sisby.kaleido.lib.quiltconfig.api.metadata.NamingSchemes;
 import folk.sisby.kaleido.lib.quiltconfig.api.values.ComplexConfigValue;
 import folk.sisby.kaleido.lib.quiltconfig.api.values.ConfigSerializableObject;
 
-@DisplayNameConvention(NamingSchemes.SPACE_SEPARATED_LOWER_CASE)
+@DisplayNameConvention(NamingSchemes.TITLE_CASE)
 @SerializedNameConvention(NamingSchemes.SNAKE_CASE)
 public class Config extends WrappedConfig {
 
